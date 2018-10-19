@@ -1,3 +1,5 @@
 class Recipe < ApplicationRecord
-  
+  validates :name, presence: true, length: {minimum: 5, maximum: 100}
+  validates :summary, presence: true, length: {minimum: 10, maximum: 150}
+  validates :describtion, presence: true, length: {minimum: 20, maximum: 200}
 end
