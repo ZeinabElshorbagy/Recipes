@@ -1,4 +1,4 @@
-<h1>All Recipes</h1>
+<%= render 'shared/page_title', title: "All Recipes" %>
 <hr/>
 
 <% @recipes.each do |recipe| %>
@@ -6,7 +6,7 @@
 
     <div class="col-md-2">
       <section class="chef-info center">
-        
+
         <h5>Chef name: <%= recipe.chef.chefname %></h5>
       </section>
     </div>

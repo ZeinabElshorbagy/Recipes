@@ -1,21 +1,3 @@
-<p>
-  <h1>Edit a new Recipe</h1>
-  <hr/>
-</p>
+<%= render 'shared/page_title', title: "Edit Recipe" %>
 
-<div class="row">
-  <div class="well col-md-8 col-md-offset-2">
-    <%= form_for @recipe do |f| %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-
-      <%= f.label :summary %>
-      <%= f.text_field :summary %>
-
-      <%= f.label :describtion %>
-      <%= f.text_area :describtion, rows: 10 %>
-
-      <%= f.submit 'Edit Recipe', class: "btn btn-success" %>
-    <% end %>
-  </div>
-</div>
+<%= render 'form' %>
