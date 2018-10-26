@@ -41,6 +41,18 @@ class RecipesController < ApplicationController
     #code
   end
 
+  def like
+    @recipe = Recipe.find(params[:id])
+    like = Like.create(like: params[:like], chef: Chef.first, recipe: @recipe)
+    if like.valid?
+      flash[:success] = "done"
+      redirect_back fallback_location: like_recipe_path(@recipe)
+    else
+      flash[:danger] = "like/dislike once"
+      redirect_back fallback_location: like_recipe_path(@recipe)
+    end
+  end
+
   private
     def recipe_params
       params.require(:recipe).permit(:name, :summary, :describtion)
