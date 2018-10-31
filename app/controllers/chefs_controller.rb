@@ -1,11 +1,11 @@
 class ChefsController < ApplicationController
 
   def index
-    #code
+    @chefs = Chef.all
   end
 
   def show
-    #code
+    @chef = Chef.find(params[:id])
   end
 
   def new
