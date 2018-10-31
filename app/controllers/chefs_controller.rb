@@ -16,6 +16,7 @@ class ChefsController < ApplicationController
     @chef = Chef.new(chef_params)
     if @chef.save
       flash[:success] = "Account has been created successfully"
+      session[:chef_id] = @chef.id
       redirect_to recipes_path
     else
       render 'new'
@@ -34,10 +35,6 @@ class ChefsController < ApplicationController
     else
       render 'edit'
     end
-  end
-
-  def destroy
-    #code
   end
 
   private
